@@ -7,7 +7,11 @@ import List from './components/SuppliersList.vue'
 import Map from './components/SuppliersMap.vue'
 import Supplier from './components/Supplier.vue'
 import 'leaflet/dist/leaflet.css';
+import { registerSW } from 'virtual:pwa-register'
 
+if ('serviceWorker' in navigator) {
+    registerSW()
+}
 
 const router = createRouter({
     history: createWebHistory(),
