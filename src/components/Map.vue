@@ -3,6 +3,18 @@ import 'leaflet/dist/leaflet.css';
 import { LMap, LTileLayer, LMarker } from "@vue-leaflet/vue-leaflet";
 import axios from 'axios';
 
+// import L from 'leaflet';
+//
+// import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+// import iconUrl from 'leaflet/dist/images/marker-icon.png';
+// import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+//
+// L.Icon.Default.mergeOptions({
+//   iconRetinaUrl,
+//   iconUrl,
+//   shadowUrl,
+// });
+
 export default {
   components: {
     LMap,
@@ -62,7 +74,7 @@ export default {
 
 <template>
   <div style="height:600px; width:800px">
-    <l-map ref="map" v-model:zoom="zoom" :center="center">
+    <l-map ref="map" v-model:zoom="zoom" :center="center" :use-global-leaflet="false">
       <l-tile-layer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           layer-type="base"
